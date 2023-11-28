@@ -1,0 +1,23 @@
+ALGORITHM LIREPHRASE
+VAR
+    voyelles : ARRAY_OF STRING[5] := {"a","e","i","o","u"};
+    phrase:STRING[];
+    nbre_mot:INTEGER := 1;
+    nbre_voyelle:INTEGER := 0;
+    i:INTEGER;
+    j:INTEGER;
+BEGIN
+Read(phrase)
+    FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+        IF (phrase[i] = ' ') THEN
+            nbre_mot := nbre_mot + 1
+        END_IF
+        FOR j FROM 0 TO voyelle.length-1 STEP 1  DO
+            IF (phrase[i] = voyelles[j]) THEN
+                nbre_voyelle := nbre_voyelle + 1
+            END_IF
+        END_FOR
+    END_FOR
+Write("Il y a",nbre_mot,"mots")
+Write("Il y a",nbre_voyelle,"voyelles")
+END
