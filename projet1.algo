@@ -8,7 +8,7 @@ VAR
     j:INTEGER;
 BEGIN
 Read(phrase)
-    FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+    FOR i FROM 0 STEP 1  DO
         IF (phrase[i] = ' ') THEN
             nbre_mot := nbre_mot + 1
         END_IF
