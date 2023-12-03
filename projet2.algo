@@ -1,17 +1,17 @@
 ALGORITHM COMPARAISON_TABLEAU
 VAR
-    tab1: ARRAY_OF INTEGER[];
-    tab2 : ARRAY_OF INTEGER[];
+    tab1: ARRAY_OF INTEGER[5];
+    tab2 : ARRAY_OF INTEGER[5];
     i:INTEGER;
     j:INTEGER;
     a:INTEGER;
     b:INTEGER
     sum:INTEGER := 0;
 BEGIN
-FOR i FROM 0  STEP 1  DO
+FOR i FROM 0  TO 4 STEP 1  DO
     Read(tab1[i])
 END_FOR
-FOR j FROM 0  STEP 1  DO
+FOR j FROM 0  TO 4 STEP 1  DO
     Read(tab2[j])
 END_FOR
 FOR a FROM 0 TO tab1.length-1 STEP 1  DO
