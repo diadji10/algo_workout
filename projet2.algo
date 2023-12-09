@@ -5,7 +5,9 @@ VAR
     i:INTEGER;
     j:INTEGER;
     a:INTEGER;
-    b:INTEGER
+    b:INTEGER;
+    c:INTEGER;
+    d:INTEGER;
     sum:INTEGER := 0;
 BEGIN
 FOR i FROM 0  TO 4 STEP 1  DO
@@ -14,15 +16,29 @@ END_FOR
 FOR j FROM 0  TO 4 STEP 1  DO
     Read(tab2[j])
 END_FOR
-FOR a FROM 0 TO tab1.length-1 STEP 1  DO
-    IF (tab1[a] not in tab2) THEN
-        sum = sum + tab1[a]
-    END_IF
-END_FOR
-FOR b FROM 0 TO tab2.length-1 STEP 1  DO
-    IF (tab2[b] not in tab1) THEN
-        sum = sum + tab2[b]
-    END_IF
-END_FOR
+a := 0;
+WHILE (a < tab1.length) DO
+    FOR b FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (tab1[a] = tab2[b]) THEN
+            break;
+        END_IF
+        IF (b=tab2.length-1 and tab1[a]!=tab2[b]) THEN
+            sum := sum + tab1[a];
+        END_IF
+    END_FOR
+    a := a + 1
+END_WHILE
+c := 0;
+WHILE (c < tab2.length) DO
+    FOR d FROM 0 TO tab1.length-1 STEP 1  DO
+        IF (tab2[c] = tab1[d]) THEN
+            break;
+        END_IF
+        IF (d=tab1.length-1 and tab2[c]!=tab1[d]) THEN
+            sum := sum + tab2[c];
+        END_IF
+    END_FOR
+    c := c + 1
+END_WHILE
 write(sum)
 END
